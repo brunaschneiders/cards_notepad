@@ -61,12 +61,16 @@ class CardController {
 
       const [card] = await Card.update(req.body, { where: { uid } });
 
-      if (card) {
+      if (!card) {
         throw Error('Este card não foi encontrado.');
       }
-      return res.json({ card });
+
+      return res.json({ message: 'Dados atualizados!' });
     } catch (error) {
-      return res.json(error);
+      return res.json({
+        message: 'Não foi possível atualizar os dados do card.',
+        error,
+      });
     }
   }
 

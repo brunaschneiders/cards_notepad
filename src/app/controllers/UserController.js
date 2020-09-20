@@ -74,7 +74,10 @@ class UserController {
       }
 
       const { name } = await user.update(req.body);
-      return res.json({ user: { uid, name, email } });
+      return res.json({
+        message: 'Dados atualizados com sucesso!',
+        user: { uid, name, email },
+      });
     } catch (error) {
       return res.json({
         error:

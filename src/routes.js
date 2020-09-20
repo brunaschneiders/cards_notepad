@@ -30,6 +30,6 @@ routes.post('/cards', CardController.store);
 routes.get('/cards', CardController.index);
 routes.get('/cards/:uid', CardController.show);
 routes.put('/cards/:uid', CardController.update);
-routes.delete('/cards/:uid', CardController.update);
+routes.delete('/cards/:uid', CardController.delete);
 
 export default routes;
